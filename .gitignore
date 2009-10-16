@@ -1,0 +1,6 @@
+.idea
+.svn
+public/documents
+log/*
+tmp/*
+pkg

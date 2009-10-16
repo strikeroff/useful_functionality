@@ -1,0 +1,13 @@
+init.rb
+lib/useful_functionality.rb
+Manifest
+rails_generators/news_like/news_like_generator.rb
+rails_generators/news_like/templates/migration.rb
+rails_generators/news_like/templates/news_post.rb
+rails_generators/news_like/templates/news_posts_controller.rb
+rails_generators/news_like/templates/news_posts_helper.rb
+rails_generators/news_like/templates/views/index.html.erb
+rails_generators/news_like/templates/views/new.html.erb
+rails_generators/news_like/templates/views/show.html.erb
+Rakefile
+README
