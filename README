@@ -1,31 +1,9 @@
-To use file upload
+1)News like functionality generation.Example:
 
-1)Create migration for UploadedFile model
+   ruby script/generate news_like post
 
-
-		class CreateUploadedFiles < ActiveRecord::Migration
-		  def self.up
-			create_table :uploaded_files do |t|
-			  t.string :data_file_name
-			  t.string :data_content_type
-			  t.integer :data_file_size
-			  t.datetime :data_updated_at			  
-			  t.text :upload_params
-			  t.timestamps
-			end
-		  end
-
-		  def self.down
-			drop_table :uploaded_files
-		  end
-		end
-		
-2)In controller that should works with files upload(or create custom)
- include Inplace::Upload
-3) In routes.rb add routes to upload actions(change value in :controller option on yours)
-
-      map.upload_inplace 'upload_inplace', :controller=>"main",:action=>"upload_inplace"
-      map.upload "upload", :controller=>"main",:action=>"upload"
+     Generates 3 views,controller,helper,model,migration and add nessesary resource routes
 
 
 
+   
