@@ -14,7 +14,7 @@ class ArticleLikeGenerator <  Rails::Generator::Base
   def manifest
     record do |m|
       m.directory "app/models"
-      m.directory "app/controllers"      
+      m.directory "app/controllers"
       m.directory "app/views"
       m.directory "lib"
 
@@ -41,11 +41,12 @@ class ArticleLikeGenerator <  Rails::Generator::Base
         m.migration_template "migration.rb", "db/migrate", :migration_file_name => "create_articles"
       end
 
-      m.route_name article_like, article_like, :controller => 'articles', :action => 'articles_show',
-                   :requirements=>{
-                           :alias=>"#{article_like}"
-                   }
-
+      unless article_like.blank?
+        m.route_name article_like, article_like, :controller => 'articles', :action => 'articles_show',
+                     :requirements=>{
+                             :alias=>"#{article_like}"
+                     }
+      end
 
     end
   end
