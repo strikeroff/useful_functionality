@@ -16,6 +16,7 @@
                    :form_name      => "title",
                    :wrapperPattern => "<%= singular_name%>[*]",
                    :enable         => admin?) %>
+
         <%%= inplace_textareafield("body",  show_unblanked(@object.body,  "Добавить текст статьи"), "",
                                   :width          => "527px",
                                   :height         => "450px",

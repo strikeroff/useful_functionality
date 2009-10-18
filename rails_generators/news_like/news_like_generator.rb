@@ -1,4 +1,4 @@
-#require File.expand_path(File.dirname(__FILE__) + "/lib/insert_commands.rb")
+require "generators_helpers/insert_commands.rb"
 class NewsLikeGenerator < Rails::Generator::Base
 
   attr_accessor :news_like,:generator_options
@@ -31,6 +31,12 @@ class NewsLikeGenerator < Rails::Generator::Base
       m.migration_template "migration.rb", "db/migrate", :migration_file_name => "create_#{plural_name}"
 
       m.route_resources plural_name
+
+      #m.route_name article_like, article_like, :controller => 'articles', :action => 'articles_show',
+      #                  :requirements=>{
+      #                          :alias=>"#{article_like}"
+      #                  }
+      #
       
 
     end

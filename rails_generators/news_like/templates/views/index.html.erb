@@ -6,8 +6,8 @@
               <%%= post.created_at.strftime("%d.%m.%Y") %>
             </div>
             <div class="list-posts">
-              <%#= show_link_in_text( post.title, news_year_show_url(:id => post.id, :year=>post.created_at.year)) %>
-              <%%= title(post.title, :link => news_year_show_url(:id => post.id, :year=>post.created_at.year))%>
+
+              <%%= title(post.title, :link => <%= singular_name%>_url(:id => post.id))%>
             </div>
           </div>
 
@@ -15,8 +15,7 @@
     </div>
 <%% end %>
 <%% if admin? %>
-    <div class="post-operations">
-      <%%= image_tag "news/add.gif" %>
-      <%%= link_to I18n.t('news.add_post'), new_news_post_url %>
+    <div class="post-operations">      
+      <%%= link_to I18n.t('<%= plural_name%>.add_post'), new_<%= singular_name%>_url %>
     </div>
 <%% end %>
