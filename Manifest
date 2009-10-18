@@ -1,6 +1,14 @@
 init.rb
+lib/extensions/generator_base.rb
+lib/generators_helpers/insert_commands.rb
 lib/useful_functionality.rb
 Manifest
+rails_generators/article_like/article_like_generator.rb
+rails_generators/article_like/templates/article.rb
+rails_generators/article_like/templates/articles_controller.rb
+rails_generators/article_like/templates/article_methods.rb
+rails_generators/article_like/templates/migration.rb
+rails_generators/article_like/templates/show.html.erb
 rails_generators/news_like/news_like_generator.rb
 rails_generators/news_like/templates/migration.rb
 rails_generators/news_like/templates/news_post.rb

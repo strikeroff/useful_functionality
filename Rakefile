@@ -9,7 +9,7 @@ Echoe.new('useful_functionality', '0.1.0') do |p|
   p.author         = "Vesov Ilya"
   p.email          = "strikeroff@gmail.com"
   p.ignore_pattern = ["tmp/*", "script/*",".svn",".git"]
-  #p.runtime_dependencies = ['inplace']
+  p.runtime_dependencies = ['nifty-generators']
   p.need_tar_gz =     false
   p.retain_gemspec =  true
   p.gemspec_name =    'useful_functionality.gemspec'

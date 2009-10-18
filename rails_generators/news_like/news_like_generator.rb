@@ -1,12 +1,13 @@
 #require File.expand_path(File.dirname(__FILE__) + "/lib/insert_commands.rb")
 class NewsLikeGenerator < Rails::Generator::Base
 
-  attr_accessor :news_like
+  attr_accessor :news_like,:generator_options
 
   def initialize(runtime_args, runtime_options = {})
     super
     usage if @args.empty?
     @news_like = @args.first
+    @generator_options = @args.second || {}
   end
 
   def manifest

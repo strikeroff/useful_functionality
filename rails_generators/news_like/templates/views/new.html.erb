@@ -1,1 +1,36 @@
-New
+<%% form_id = "new_<%= singular_name%>_form" %>
+<%% form_for :<%= singular_name%>, @object, :url =>{:action => "create"}, :html => { :id => form_id} do |form| %>
+
+<%%= form.error_messages %>
+
+<%%= inplace_textfield("title",
+                   show_unblanked(@object.title, "Введите текст заголовка"),
+                   "",
+                   :width          => "440px",
+                   :height         => "20px",
+                   :identifier     => "title",
+                   :value          => @object.title,
+                   :default_value  => 'Введите текст заголовка',
+                   :adapter        => true,
+                   :form_id        => form_id,
+                   :form_name      => "title",
+                   :wrapperPattern => "<%= singular_name%>[*]",
+                   :enable         => admin?) %>
+        <%%= inplace_textareafield("body",  show_unblanked(@object.body,  "Добавить текст статьи"), "",
+                                  :width          => "527px",
+                                  :height         => "450px",
+                                  :identifier     => "body",
+                                  :value          => @object.body,
+                                  :default_value  => 'Добавить текст статьи',
+                                  :adapter        => true,
+                                  :form_id        => form_id,
+                                  :form_name      => "body",
+                                  :wrapperPattern => "<%= singular_name%>[*]",
+                                  :enable         => admin?)
+        %>
+
+
+      <%%= submit_tag "Публикация", :class=>"publ" %>
+
+
+<%% end %>

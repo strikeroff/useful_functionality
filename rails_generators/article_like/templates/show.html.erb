@@ -1,0 +1,9 @@
+<%%= inplace_textareafield("description",  show_unblanked(@article.description,  "Введите текст"),
+            article_url(@article) << "/attribute/description",
+            :width          => "700px",
+            :height         => "450px",
+            :identifier     => "description",
+            :value          => @article.description,
+            :default_value  => 'Добавить текст статьи',
+            :enable         => admin?)
+    %>

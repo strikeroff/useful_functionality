@@ -1,1 +1,24 @@
-Show
+<div class="post">
+  <div class="post-attribute post-title">
+    <%%= title @object.title,
+               :update_to => attribute_<%=singular_name%>_url(:id=>@object.id,:attribute=>"title"),
+               :enable => admin?,  :mode=>:edit %>
+  </div>
+
+
+  <div class="post-attribute">
+
+    <%%= textarea @object.body, :update_to => attribute_<%=singular_name%>_url(:id=>@object.id,:attribute=>"body"),
+                 :width          => "627px",
+                 :height         => "450px",
+                 :editable         => admin?%>
+
+  </div>
+  <div class="post-operations">
+    <%%= show_link_to_if I18n.t("<%=plural_name%>.delete_post"), <%=singular_name%>_url(@object), admin?,
+                        :method=>:delete,
+                        :confirm=>I18n.t("<%=plural_name%>.confirm_delete_post") %>
+  </div>  
+</div>
+
+

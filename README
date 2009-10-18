@@ -4,6 +4,12 @@
 
      Generates 3 views,controller,helper,model,migration and add nessesary resource routes
 
+2) Inplace Articles like fuctionality generation.
+
+        Example: ruby script/generate article_like clients
+        
+3) useful_generators depends on ryanb's nifty_generators gem. so you've got it's fuctions too.
+
 
 
    

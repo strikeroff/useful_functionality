@@ -1,1 +1,22 @@
-Index
+<%% unless @<%= plural_name%>.blank? %>
+    <div class="news-post">
+      <%% @<%= plural_name%>.each do |post| %>
+          <div class="post-item">
+            <div class="news-date">
+              <%%= post.created_at.strftime("%d.%m.%Y") %>
+            </div>
+            <div class="list-posts">
+              <%#= show_link_in_text( post.title, news_year_show_url(:id => post.id, :year=>post.created_at.year)) %>
+              <%%= title(post.title, :link => news_year_show_url(:id => post.id, :year=>post.created_at.year))%>
+            </div>
+          </div>
+
+      <%% end %>
+    </div>
+<%% end %>
+<%% if admin? %>
+    <div class="post-operations">
+      <%%= image_tag "news/add.gif" %>
+      <%%= link_to I18n.t('news.add_post'), new_news_post_url %>
+    </div>
+<%% end %>
