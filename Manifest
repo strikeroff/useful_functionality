@@ -11,3 +11,4 @@ rails_generators/news_like/templates/views/new.html.erb
 rails_generators/news_like/templates/views/show.html.erb
 Rakefile
 README
+useful_functionality.gemspec

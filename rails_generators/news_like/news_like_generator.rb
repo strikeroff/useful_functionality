@@ -7,13 +7,10 @@ class NewsLikeGenerator < Rails::Generator::Base
     super
     usage if @args.empty?
     @news_like = @args.first
-    @news_like_route_name = @args.second||"news"
   end
 
   def manifest
-    record do |m|
-      #m.migration_template "migrate/image.rb", "db/migrate", :migration_file_name => "create_inplace_images"
-      #m.migration_template "migrate/file.rb", "db/migrate", :migration_file_name => "create_inplace_files"
+    record do |m|      
       m.directory "app/models"
       m.directory "app/controllers"
       m.directory "app/helpers"

@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vesov Ilya"]
-  s.date = %q{2009-10-17}
+  s.date = %q{2009-10-18}
   s.description = %q{useful_functionality }
   s.email = %q{strikeroff@gmail.com}
   s.extra_rdoc_files = ["lib/useful_functionality.rb", "README"]
