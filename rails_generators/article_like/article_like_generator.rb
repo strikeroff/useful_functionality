@@ -7,8 +7,8 @@ class ArticleLikeGenerator <  Rails::Generator::Base
 
   def initialize(runtime_args, runtime_options = {})
     super
-    usage if @args.empty?
-    @article_like = @args.first
+    #usage if @args.empty?
+    @article_like = @args.first || "article"
   end
 
   def manifest
@@ -42,12 +42,28 @@ class ArticleLikeGenerator <  Rails::Generator::Base
       end
 
       unless article_like.blank?
-        m.route_name article_like, article_like, :controller => 'articles', :action => 'articles_show',
+        m.route_name article_like, article_like, :controller => 'articles', :action => 'show',
                      :requirements=>{
                              :alias=>"#{article_like}"
                      }
       end
 
     end
+  end
+
+  def singular_name
+    article_like.underscore.singularize
+  end
+
+  def plural_name
+    article_like.underscore.pluralize
+  end
+
+  def singular_class_name
+    singular_name.camelize
+  end
+
+  def plural_class_name
+    plural_name.camelize
   end
 end
