@@ -1,6 +1,6 @@
 class Create<%= plural_class_name %> < ActiveRecord::Migration
   def self.up
-    create_table :news_posts do |t|
+    create_table :<%= plural_name %> do |t|
       t.string :title
       t.text :body
 	  t.boolean :delta, :default => true, :null => false 
@@ -9,6 +9,6 @@ class Create<%= plural_class_name %> < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :news_posts
+    drop_table :<%= plural_name %>
   end
 end
