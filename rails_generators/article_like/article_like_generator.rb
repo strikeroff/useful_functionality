@@ -42,6 +42,9 @@ class ArticleLikeGenerator <  Rails::Generator::Base
       end
 
       unless article_like.blank?
+
+        m.template "show.html.erb", "app/views/articles/#{article_like}.html.erb"
+
         m.route_name article_like, article_like, :controller => 'articles', :action => 'show',
                      :requirements=>{
                              :alias=>"#{article_like}"
